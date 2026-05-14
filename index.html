@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="SONACHANDI - Eternal Elegance. Discover handcrafted fine jewellery blending heritage artistry with contemporary luxury.">
+    <meta name="keywords" content="sonachandi, gold jewellery, diamond rings, luxury brand, fine jewellery, indian heritage, Bokaro">
+    <meta name="author" content="SONACHANDI Atelier">
+    <meta property="og:title" content="SONACHANDI | Eternal Elegance">
+    <meta property="og:description" content="Discover the art of fine jewellery. Each piece tells a story of craftsmanship and heritage.">
+    <meta property="og:image" content="public/images/banner1.jpeg">
+    <meta name="theme-color" content="#D4AF37">
+    <title>SONACHANDI | Eternal Elegance in Gold & Silver</title>
+    
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==================== */
+        /* RESET & BASE STYLES */
+        /* ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDF8F0;
+            color: #1E1A16;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* Custom Cursor */
+        .cursor-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #D4AF37;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1.5px solid rgba(212, 175, 55, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.15s ease-out;
+            transform: translate(-50%, -50%);
+        }
+
+        @media (max-width: 768px) {
+            .cursor-dot, .cursor-outline { display: none; }
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #1A1308;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .section-subtitle {
+            color: #5E4B38;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(253, 248, 240, 0.96);
+            backdrop-filter: blur(12px);
+            padding: 0.8rem 0;
+            box-shadow: 0 2px 25px rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Logo Container - Oval Design Extending Downward */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+        }
+
+        .logo-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-img {
+            height: 85px;
+            width: auto;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+            transition: all 0.3s ease;
+        }
+
+        /* Oval background behind logo that extends downward */
+        .logo-oval-bg {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110%;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border-radius: 50%;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        /* Decorative oval ring below logo */
+        .logo-ring {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            pointer-elements: none;
+        }
+
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #1A1308;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.8rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: #2C241C;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #D4AF37;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #D4AF37;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .bar {
+            width: 28px;
+            height: 2px;
+            background: #1A1308;
+            transition: 0.3s;
+        }
+
+        /* Hero Slider */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            padding: 0 20px;
+            z-index: 2;
+            color: white;
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 0.85rem;
+            letter-spacing: 6px;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: white;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.92;
+            font-weight: 300;
+        }
+
+        .btn-primary, .btn-outline {
+            display: inline-block;
+            padding: 14px 38px;
+            margin: 0 12px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: all 0.35s ease;
+            border-radius: 0;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #D4AF37;
+            color: #1A1308;
+            border: 1px solid #D4AF37;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .btn-outline {
+            border: 1px solid white;
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #1A1308;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            z-index: 2;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 55px;
+            background: white;
+            margin: 8px auto 0;
+            animation: scrollLine 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollLine {
+            0% { height: 15px; opacity: 1; }
+            50% { height: 40px; opacity: 0.5; }
+            100% { height: 15px; opacity: 1; }
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 3;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active, .dot:hover {
+            background: #D4AF37;
+            transform: scale(1.2);
+        }
+
+        /* About Section */
+        .about {
+            padding: 130px 0;
+            background: #FDF8F0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-desc {
+            margin-bottom: 1.5rem;
+            color: #4A3D32;
+            line-height: 1.7;
+        }
+
+        .about-signature {
+            margin: 2rem 0;
+            font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
+            border-left: 3px solid #D4AF37;
+            padding-left: 20px;
+            font-size: 1.1rem;
+        }
+
+        .btn-text {
+            text-decoration: none;
+            font-weight: 500;
+            color: #D4AF37;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            box-shadow: 0 25px 35px -15px rgba(0,0,0,0.1);
+        }
+
+        .image-border {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #D4AF37;
+            z-index: -1;
+        }
+
+        /* Collections Section - FIXED IMAGE FIT */
+        .collections {
+            padding: 100px 0;
+            background: #FFFFFF;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .collection-card {
+            background: #fff;
+            transition: transform 0.45s ease, box-shadow 0.45s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.1);
+        }
+
+        /* FIXED: Collection Card Images - Increased Width */
+        .collection-card .card-img {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 420px;
+            background-color: #F5F0EA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .collection-card .card-img img {
+            width: 90%;
+            height: auto;
+            max-height: 90%;
+            object-fit: contain;
+            object-position: center;
+            transition: transform 0.7s ease;
+            background-color: #F9F4EA;
+        }
+
+        .collection-card:hover .card-img img {
+            transform: scale(1.02);
+        }
+
+        .card-info {
+            padding: 26px 20px;
+            text-align: center;
+        }
+
+        .card-info h3 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        .card-info p {
+            color: #6B5B4E;
+        }
+
+        .card-price {
+            display: inline-block;
+            margin-top: 12px;
+            color: #D4AF37;
+            font-weight: 500;
+        }
+
+        /* Arrivals Section - FIXED IMAGE WITH INCREASED WIDTH */
+        .arrivals {
+            padding: 100px 0;
+            background: #F9F4EA;
+        }
+
+        .arrivals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .arrival-card {
+            background: white;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .arrival-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1);
+        }
+
+        /* FIXED: Arrival Card Images - Increased Width */
+        .arrival-card .arrival-img {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 300px;
+            background-color: #F5F0EA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arrival-card .arrival-img img {
+            width: 90%;
+            height: auto;
+            max-height: 90%;
+            object-fit: contain;
+            object-position: center;
+            transition: transform 0.5s ease;
+            background-color: #F9F4EA;
+        }
+
+        .arrival-card:hover .arrival-img img {
+            transform: scale(1.02);
+        }
+
+        .arrival-details {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .arrival-details h4 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .arrival-price {
+            display: block;
+            margin: 12px 0;
+            font-weight: 600;
+            color: #D4AF37;
+        }
+
+        .btn-small {
+            display: inline-block;
+            padding: 8px 28px;
+            border: 1px solid #D4AF37;
+            text-decoration: none;
+            color: #1E1A16;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-small:hover {
+            background: #D4AF37;
+            color: white;
+        }
+
+        /* Responsive adjustments for larger images */
+        @media (max-width: 768px) {
+            .collection-card .card-img img {
+                width: 85%;
+            }
+            
+            .arrival-card .arrival-img img {
+                width: 85%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .collection-card .card-img img {
+                width: 80%;
+            }
+            
+            .arrival-card .arrival-img img {
+                width: 80%;
+            }
+        }
+
+        /* Why Us */
+        .whyus {
+            padding: 120px 0;
+            background: #FFFFFF;
+        }
+
+        .whyus-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #D4AF37;
+        }
+
+        .feature-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .feature-item p {
+            color: #6B5B4E;
+        }
+
+        .luxury-badge {
+            text-align: center;
+            background: #F9F4EA;
+            padding: 60px 20px;
+            border-radius: 2px;
+        }
+
+        .luxury-badge img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: #FDF8F0;
+        }
+
+        .testimonial-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 45px 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+            border-bottom: 2px solid #D4AF37;
+            transition: 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.65;
+            color: #4A3D32;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .rating {
+            color: #D4AF37;
+            letter-spacing: 2px;
+            margin-top: 18px;
+        }
+
+        /* Privacy Section */
+        .privacy {
+            padding: 80px 0;
+            background: #EFE8DE;
+        }
+
+        .privacy-card {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background: white;
+            padding: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+        }
+
+        .privacy-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .privacy-card p {
+            margin-bottom: 15px;
+            color: #5E4B38;
+        }
+
+        /* Footer */
+        .footer {
+            background: #110E0B;
+            color: #C9BCA8;
+            padding: 70px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 1.5fr 2fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            width: 55px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand h3 {
+            color: #F5E6D3;
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: #C9BCA8;
+            font-weight: 500;
+            transition: 0.3s;
+            padding: 8px 16px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 30px;
+        }
+
+        .social-icons a:hover {
+            color: #D4AF37;
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: #F5E6D3;
+            margin-bottom: 25px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #C9BCA8;
+            transition: 0.3s;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: #D4AF37;
+        }
+
+        .footer-contact address {
+            font-style: normal;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+        }
+
+        .footer-contact .hours {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #D4AF37;
+        }
+
+        .footer-contact a {
+            color: #C9BCA8;
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            color: #D4AF37;
+        }
+
+        .policy-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .policy-links a {
+            color: #C9BCA8;
+            text-decoration: none;
+            font-size: 0.7rem;
+            transition: 0.3s;
+        }
+
+        .policy-links a:hover {
+            color: #D4AF37;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.75rem;
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1s; }
+
+        .reveal-left, .reveal-right, .reveal-up {
+            opacity: 0;
+            transition: all 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .reveal-left.revealed, .reveal-right.revealed, .reveal-up.revealed {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
+        }
+
+        .reveal-left { transform: translateX(-50px); }
+        .reveal-right { transform: translateX(50px); }
+        .reveal-up { transform: translateY(40px); }
+
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #E8DDD0; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 5px; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 3.8rem; }
+            .section-title { font-size: 2.8rem; }
+            .container { padding: 0 30px; }
+            .logo-img { height: 70px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 75%;
+                background: rgba(253, 248, 240, 0.98);
+                backdrop-filter: blur(18px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 0.45s ease;
+                gap: 2rem;
+                z-index: 1000;
+            }
+            .nav-links.active { right: 0; }
+            .hamburger { display: flex; }
+            .hamburger.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+            .hamburger.active .bar:nth-child(2) { opacity: 0; }
+            .hamburger.active .bar:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+            
+            .hero-title { font-size: 2.5rem; }
+            .about-grid, .whyus-grid, .footer-grid { grid-template-columns: 1fr; gap: 45px; }
+            .collections-grid { grid-template-columns: 1fr; }
+            .testimonial-slider { grid-template-columns: 1fr; }
+            .btn-primary, .btn-outline { margin: 8px; padding: 10px 20px; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .social-icons { justify-content: center; }
+            .policy-links { flex-direction: column; gap: 12px; align-items: center; }
+            .slider-dots { bottom: 80px; }
+            
+            /* Responsive image height fixes */
+            .collection-card .card-img { height: 350px; }
+            .arrival-card .arrival-img { height: 280px; }
+            
+            .logo-img { height: 55px; }
+            .logo-oval-bg { bottom: -18px; height: 45px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2rem; }
+            .section-title { font-size: 2rem; }
+            .container { padding: 0 20px; }
+            .hero-subtitle { font-size: 0.65rem; letter-spacing: 3px; }
+            
+            .collection-card .card-img { height: 280px; }
+            .arrival-card .arrival-img { height: 250px; }
+            
+            .logo-img { height: 48px; }
+            .logo-text { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-wrapper">
+                    <img src="public/images/logo.png" alt="SONACHANDI Logo" class="logo-img">
+                    <div class="logo-oval-bg"></div>
+                    <div class="logo-ring"></div>
+                </div>
+                <span class="logo-text">SONACHANDI</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">Heritage</a>
+                <a href="#collections" class="nav-link">Collections</a>
+                <a href="#arrivals" class="nav-link">Arrivals</a>
+                <a href="#whyus" class="nav-link">Craft</a>
+                <a href="#testimonials" class="nav-link">Stories</a>
+                <a href="#contact" class="nav-link">Concierge</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section with Slider -->
+        <section id="home" class="hero">
+            <div class="hero-slider" id="heroSlider">
+                <div class="slide active" style="background-image: url('public/images/banner.jpg');"></div>
+                <div class="slide" style="background-image: url('public/images/banner2.webp');"></div>
+                <div class="slide" style="background-image: url('public/images/banner3.webp');"></div>
+                <div class="slide" style="background-image: url('public/images/banner4.webp');"></div>
+                <div class="slide" style="background-image: url('public/images/banner5.webp');"></div>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-subtitle fade-up">SONACHANDI — WHERE GOLD MEETS GRACE</div>
+                <h1 class="hero-title fade-up delay-1">Eternal Radiance<br>Handcrafted Legacy</h1>
+                <p class="hero-desc fade-up delay-2">Discover the new collection of timeless masterpieces, where every jewel whispers a story of heritage and passion.</p>
+                <div class="hero-btns fade-up delay-3">
+                    <a href="#collections" class="btn-primary">DISCOVER</a>
+                    <a href="#contact" class="btn-outline">PRIVATE APPOINTMENT</a>
+                </div>
+            </div>
+            <div class="slider-dots" id="sliderDots"></div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text reveal-left">
+                        <div class="section-tag">Since 1978</div>
+                        <h2 class="section-title">The Art of SONACHANDI</h2>
+                        <p class="about-desc">Rooted in the timeless traditions of Indian craftsmanship, SONACHANDI redefines luxury with an unwavering commitment to purity and artistry. Each creation is a dialogue between heritage goldsmithing and contemporary elegance.</p>
+                        <p class="about-desc">Our master artisans devote hundreds of hours to every piece, ensuring that each diamond and intricate carving captures the soul of celebration. We don't just craft jewellery; we preserve legacies for generations to come.</p>
+                        <div class="about-signature">
+                            <span>— Aarav Mehta, Creative Custodian</span>
+                        </div>
+                        <a href="#" class="btn-text">Discover our atelier →</a>
+                    </div>
+                    <div class="about-image reveal-right">
+                        <img src="public/images/shop.jpeg" alt="SONACHANDI Craftsmanship">
+                        <div class="image-border"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Collections -->
+        <section id="collections" class="collections">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <div class="section-tag">Curated Elegance</div>
+                    <h2 class="section-title">Signature Collections</h2>
+                    <p class="section-subtitle">Each narrative crafted in 22k gold and ethically sourced diamonds.</p>
+                </div>
+                <div class="collections-grid">
+                    <div class="collection-card reveal-up">
+                        <div class="card-img">
+                            <img src="public/images/categoryImg1.jpeg" alt="Swarna Collection">
+                        </div>
+                        <div class="card-info">
+                            <h3>Swarna Ras</h3>
+                            <p>Intricate temple jewellery reimagined.</p>
+                            <span class="card-price">From $5,200</span>
+                        </div>
+                    </div>
+                    <div class="collection-card reveal-up delay-1">
+                        <div class="card-img">
+                            <img src="public/images/categoryImg2.jpeg" alt="Chandrika Collection">
+                        </div>
+                        <div class="card-info">
+                            <h3>Chandrika</h3>
+                            <p>Moonlit motifs with rose-cut diamonds.</p>
+                            <span class="card-price">From $7,800</span>
+                        </div>
+                    </div>
+                    <div class="collection-card reveal-up delay-2">
+                        <div class="card-img">
+                            <img src="public/images/categoryImg3.jpeg" alt="Noor Collection">
+                        </div>
+                        <div class="card-info">
+                            <h3>Noor-e-Sonachandi</h3>
+                            <p>Polki and uncut diamonds in heritage settings.</p>
+                            <span class="card-price">From $12,500</span>
+                        </div>
+                    </div>
+                    <div class="collection-card reveal-up delay-3">
+                        <div class="card-img">
+                            <img src="public/images/categoryImg4.jpeg" alt="Parijat Collection">
+                        </div>
+                        <div class="card-info">
+                            <h3>Parijat</h3>
+                            <p>Floral-inspired gold necklaces.</p>
+                            <span class="card-price">From $4,600</span>
+                        </div>
+                    </div>
+                    <div class="collection-card reveal-up delay-4">
+                        <div class="card-img">
+                            <img src="public/images/categoryImg5.jpeg" alt="Rajadhiraj Collection">
+                        </div>
+                        <div class="card-info">
+                            <h3>Rajadhiraj</h3>
+                            <p>Royal bangles with meenakari work.</p>
+                            <span class="card-price">From $9,200</span>
+                        </div>
+                    </div>
+                    <div class="collection-card reveal-up delay-5">
+                        <div class="card-img">
+                            <img src="public/images/categoryImg6.jpeg" alt="Aura Collection">
+                        </div>
+                        <div class="card-info">
+                            <h3>Aura</h3>
+                            <p>Contemporary diamond chandeliers.</p>
+                            <span class="card-price">From $11,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals -->
+        <section id="arrivals" class="arrivals">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <div class="section-tag">Haute Joaillerie</div>
+                    <h2 class="section-title">New Arrivals</h2>
+                    <p class="section-subtitle">Limited edition masterpieces unveiled this season.</p>
+                </div>
+                <div class="arrivals-grid">
+                    <div class="arrival-card reveal-up">
+                        <div class="arrival-img">
+                            <img src="public/images/newArrivals1.jpeg" alt="Zarin Ring">
+                        </div>
+                        <div class="arrival-details">
+                            <h4>Zarin Ring</h4>
+                            <p>4.2ct Zambian emerald with diamonds</p>
+                            <span class="arrival-price">$18,400</span>
+                            <a href="#" class="btn-small">Inquire</a>
+                        </div>
+                    </div>
+                    <div class="arrival-card reveal-up delay-1">
+                        <div class="arrival-img">
+                            <img src="public/images/newArrivals2.jpeg" alt="Mughal Rivière">
+                        </div>
+                        <div class="arrival-details">
+                            <h4>Mughal Rivière</h4>
+                            <p>Grand gold and polki diamond necklace</p>
+                            <span class="arrival-price">$32,700</span>
+                            <a href="#" class="btn-small">Inquire</a>
+                        </div>
+                    </div>
+                    <div class="arrival-card reveal-up delay-2">
+                        <div class="arrival-img">
+                            <img src="public/images/newArrivals3.jpeg" alt="Jhoomar Jhumkas">
+                        </div>
+                        <div class="arrival-details">
+                            <h4>Jhoomar Jhumkas</h4>
+                            <p>Traditional gold chandbalis with pearls</p>
+                            <span class="arrival-price">$9,950</span>
+                            <a href="#" class="btn-small">Inquire</a>
+                        </div>
+                    </div>
+                    <div class="arrival-card reveal-up delay-3">
+                        <div class="arrival-img">
+                            <img src="public/images/newArrivals4.jpeg" alt="Kangan Heirloom">
+                        </div>
+                        <div class="arrival-details">
+                            <h4>Kangan Heirloom</h4>
+                            <p>Gold bangle set with ruby accents</p>
+                            <span class="arrival-price">$14,200</span>
+                            <a href="#" class="btn-small">Inquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section id="whyus" class="whyus">
+            <div class="container">
+                <div class="whyus-grid">
+                    <div class="whyus-content reveal-left">
+                        <div class="section-tag">Certified Excellence</div>
+                        <h2 class="section-title">The SONACHANDI Promise</h2>
+                        <div class="features-list">
+                            <div class="feature-item"><span class="feature-icon">✦</span><div><h4>Hallmarked Authenticity</h4><p>BIS hallmarked gold and GIA certified diamonds.</p></div></div>
+                            <div class="feature-item"><span class="feature-icon">✦</span><div><h4>Mastercraftsmanship</h4><p>Family legacy of 45+ years in fine jewellery.</p></div></div>
+                            <div class="feature-item"><span class="feature-icon">✦</span><div><h4>Ethical Sourcing</h4><p>100% conflict-free and recycled gold initiatives.</p></div></div>
+                            <div class="feature-item"><span class="feature-icon">✦</span><div><h4>Lifetime Care</h4><p>Complimentary polishing, sizing & insurance support.</p></div></div>
+                        </div>
+                    </div>
+                    <div class="whyus-visual reveal-right">
+                        <div class="luxury-badge"><img src="public/images/logo.jpeg" alt="SONACHANDI Badge"><p>Since 1978 | Handcrafted in India</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-header reveal-up"><div class="section-tag">Client Éloges</div><h2 class="section-title">Treasures of Trust</h2><p class="section-subtitle">Words from those who cherish SONACHANDI.</p></div>
+                <div class="testimonial-slider">
+                    <div class="testimonial-card reveal-up"><div class="testimonial-text">"Exquisite craftsmanship that honours our traditions while embracing modern sophistication. The attention to detail is unparalleled."</div><div class="testimonial-author">— Priyanka R., Mumbai</div><div class="rating">★★★★★</div></div>
+                    <div class="testimonial-card reveal-up delay-1"><div class="testimonial-text">"SONACHANDI created my wedding set and it was beyond imagination — heirloom quality, delicate yet majestic."</div><div class="testimonial-author">— Aditya & Neha S., Delhi</div><div class="rating">★★★★★</div></div>
+                    <div class="testimonial-card reveal-up delay-2"><div class="testimonial-text">"The purity and finish of their gold is unmatched. A true luxury experience from consultation to delivery."</div><div class="testimonial-author">— Simran K., London</div><div class="rating">★★★★★</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Section -->
+        <section id="privacy" class="privacy">
+            <div class="container">
+                <div class="privacy-card reveal-up">
+                    <h3>Discretion & Privacy</h3>
+                    <p>SONACHANDI respects your confidentiality. All transactions are encrypted and your personal data is never shared. We follow global privacy standards to protect your story.</p>
+                    <p>Our website uses only essential cookies to enhance your journey. For detailed policy, connect with our Concierge.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <img src="public/images/logo.png" alt="logo" class="footer-logo">
+                        <h3>SONACHANDI</h3>
+                        <p>Eternal Elegance in Gold & Silver</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/sonachandibokaro/posts/generations-of-trust-years-of-craftsmanship-and-a-legacy-that-shines-through-eve/1546314127501189/" target="_blank">Facebook</a>
+                            <a href="https://www.instagram.com/accounts/login/?next=%2Fsonachandibokaro%2F&source=omni_redirect" target="_blank">Instagram</a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#about">Our Story</a></li>
+                            <li><a href="#collections">Collections</a></li>
+                            <li><a href="#arrivals">New Arrivals</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Policies</h4>
+                        <ul>
+                            <li><a href="terms.html">Terms & Conditions</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="disclaimer.html">Disclaimer</a></li>
+                            <li><a href="refund.html">Refund Policy</a></li>
+                            <li><a href="shipping.html">Shipping & Delivery</a></li>
+                            <li><a href="cancellation.html">Cancellation & Return</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Visit Our Atelier</h4>
+                        <address>B 32, City Center, Sector 4,<br>Bokaro Steel City, Jharkhand 827004</address>
+                        <p>📞 <a href="tel:09934434485">099344 34485</a></p>
+                        <div class="hours">
+                            <p>⏰ Open Today · Closes 8 pm</p>
+                            <p style="font-size:0.7rem;">Suggest an edit · Own this business?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="policy-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="disclaimer.html">Disclaimer</a>
+                    <a href="refund.html">Refund Policy</a>
+                    <a href="shipping.html">Shipping & Delivery</a>
+                    <a href="cancellation.html">Cancellation & Return</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 SONACHANDI — Timeless Heirlooms. Crafted in India with devotion.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Hero Slider
+        const slides = document.querySelectorAll('.slide');
+        const dotsContainer = document.getElementById('sliderDots');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function createDots() {
+            if (!dotsContainer) return;
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function goToSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            slides[index].classList.add('active');
+            document.querySelectorAll('.dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            currentSlide = index;
+            resetInterval();
+        }
+
+        function nextSlide() {
+            let next = (currentSlide + 1) % slides.length;
+            goToSlide(next);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        if (slides.length > 0 && dotsContainer) {
+            createDots();
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Sticky Navbar
+        const navbar = document.getElementById('navbar');
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.scrollY >= sectionTop) current = section.getAttribute('id');
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+            });
+        });
+
+        // Reveal Animations
+        const revealElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('revealed'); });
+        }, { threshold: 0.15 });
+        revealElements.forEach(el => observer.observe(el));
+
+        // Mobile Menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinksDiv = document.getElementById('navLinks');
+        if (hamburger && navLinksDiv) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinksDiv.classList.toggle('active');
+                document.body.style.overflow = navLinksDiv.classList.contains('active') ? 'hidden' : '';
+            });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinksDiv.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+
+        // Smooth Scroll for hash links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const hash = this.getAttribute('href');
+                if (hash === "#" || hash === "" || hash.includes('.html')) return;
+                const target = document.querySelector(hash);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Custom Cursor
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        if (cursorDot && cursorOutline && window.innerWidth > 768) {
+            window.addEventListener('mousemove', (e) => {
+                cursorDot.style.transform = `translate(${e.clientX - 3}px, ${e.clientY - 3}px)`;
+                cursorOutline.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
+            });
+            document.querySelectorAll('a, button, .btn-primary, .btn-outline, .collection-card').forEach(el => {
+                el.addEventListener('mouseenter', () => cursorOutline.style.transform = `scale(1.5) translate(-50%, -50%)`);
+                el.addEventListener('mouseleave', () => cursorOutline.style.transform = `scale(1) translate(-50%, -50%)`);
+            });
+        }
+    </script>
+</body>
+</html>

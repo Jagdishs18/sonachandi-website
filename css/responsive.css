@@ -1,0 +1,313 @@
+/* ========================================
+   SONACHANDI - Responsive Stylesheet
+   Mobile-First Breakpoints
+   ======================================== */
+
+/* ---------- TABLET (max-width: 1024px) ---------- */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3.8rem;
+    }
+    
+    .section-title {
+        font-size: 2.8rem;
+    }
+    
+    .container {
+        padding: 0 30px;
+    }
+    
+    .collections-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .card-img img {
+        height: 350px;
+    }
+}
+
+/* ---------- MOBILE (max-width: 768px) ---------- */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 75%;
+        background: rgba(253, 248, 240, 0.98);
+        backdrop-filter: blur(18px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.45s ease;
+        gap: 2rem;
+        box-shadow: -8px 0 35px rgba(0, 0, 0, 0.05);
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        z-index: 1001;
+    }
+    
+    .bar {
+        width: 28px;
+        height: 2px;
+        background: #1A1308;
+        transition: 0.3s;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* Hero Section */
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.7rem;
+        letter-spacing: 4px;
+    }
+    
+    .hero-desc {
+        font-size: 0.95rem;
+        padding: 0 20px;
+    }
+    
+    .btn-primary, .btn-outline {
+        margin: 8px;
+        padding: 10px 24px;
+        font-size: 0.7rem;
+    }
+    
+    /* Grid Layouts */
+    .about-grid,
+    .whyus-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+    
+    .collections-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-slider {
+        grid-template-columns: 1fr;
+    }
+    
+    .arrivals-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    /* About Section */
+    .about {
+        padding: 80px 0;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .image-border {
+        display: none;
+    }
+    
+    /* Cards */
+    .card-img img {
+        height: 380px;
+    }
+    
+    .card-info h3 {
+        font-size: 1.4rem;
+    }
+    
+    /* Why Us */
+    .feature-item {
+        gap: 15px;
+    }
+    
+    .feature-icon {
+        font-size: 1.5rem;
+    }
+    
+    /* Footer */
+    .footer-grid {
+        text-align: center;
+        gap: 35px;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .footer-links ul {
+        padding: 0;
+    }
+    
+    /* Privacy Card */
+    .privacy-card {
+        padding: 35px 25px;
+        margin: 0 20px;
+    }
+    
+    .privacy-card h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ---------- SMALL MOBILE (max-width: 480px) ---------- */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary, .btn-outline {
+        width: 80%;
+        margin: 6px 0;
+        text-align: center;
+    }
+    
+    .card-img img {
+        height: 300px;
+    }
+    
+    .testimonial-card {
+        padding: 30px 20px;
+    }
+    
+    .testimonial-text {
+        font-size: 0.9rem;
+    }
+    
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .luxury-badge {
+        padding: 40px 15px;
+    }
+    
+    .footer-bottom {
+        font-size: 0.65rem;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    
+    .logo-img {
+        height: 38px;
+    }
+    
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+/* ---------- LARGE DESKTOP (min-width: 1600px) ---------- */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1500px;
+    }
+    
+    .hero-title {
+        font-size: 6rem;
+    }
+    
+    .section-title {
+        font-size: 4rem;
+    }
+    
+    .collections-grid {
+        gap: 50px;
+    }
+    
+    .card-img img {
+        height: 480px;
+    }
+}
+
+/* ---------- TOUCH DEVICE OPTIMIZATION ---------- */
+@media (hover: none) {
+    .collection-card:hover {
+        transform: none;
+    }
+    
+    .cursor-dot, .cursor-outline {
+        display: none;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+}
+
+/* ---------- PRINT STYLES ---------- */
+@media print {
+    .navbar, .cursor-dot, .cursor-outline, .scroll-indicator, .hero-btns {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .hero {
+        height: auto;
+        padding: 50px 0;
+    }
+    
+    .hero-bg {
+        display: none;
+    }
+    
+    .hero-overlay {
+        display: none;
+    }
+    
+    .hero-content {
+        color: black;
+    }
+    
+    .hero-title {
+        color: black;
+    }
+}
